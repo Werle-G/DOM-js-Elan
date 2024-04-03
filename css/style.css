@@ -1,0 +1,67 @@
+#board{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{                       /* boite initial */
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    background-color: greenyellow;
+    font-size: 3em;
+    text-align: center;
+    line-height: 75px;
+    margin: 5px;
+    animation: appear 1s;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.8s, color 0.8s, transform 0.8s;
+}
+
+.box-valid{
+    background-color: #ccc;
+    color: #aaa;
+    animation: moved 1s;
+    transform: scale(0.8);
+
+}
+
+.box.error{
+    color: rgb(115, 25, 25);
+    background-color: pink;
+    
+}
+
+.box.success{
+    color: rgb(35, 114, 29);
+    background-color: rgb(119, 186, 129);
+}
+
+.box.notice{
+    color: rgb(32, 70, 141);
+    background-color: rgb(116, 178, 211);
+    cursor: not-allowed;
+}
+
+#timer {
+    font-weight: bold;
+    font-size: 3em;
+}
+
+@keyframes appear{ /* changer d'un style à un autre */
+    from{
+        transform: scale(0) rotate(180deg)
+    }
+    to{
+        transform: scale(1) rotate(0deg)
+    }
+}
+
+@keyframes moved{
+    from{
+        transform: scale(0) rotate(180deg)
+    }
+    to{
+        transform: scale(0.8) rotate(0deg)
+    }
+}
